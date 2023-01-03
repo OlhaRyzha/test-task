@@ -1,0 +1,88 @@
+.hero {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, -0.5), rgba(0, 0, 0, -0.5)), url(../images/bg/bg_480.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, -0.5), rgba(0, 0, 0, -0.5)), url(../images/bg/bg_480_2x.jpg);
+  }
+
+  padding-top: 40px;
+  padding-bottom: 71px;
+  text-align: center;
+
+  @media screen and (min-width: 768px) {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, -0.5), rgba(0, 0, 0, -0.5)), url(../images/bg/bg_768.jpg);
+
+    @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+      background-image: linear-gradient(0deg, rgba(0, 0, 0, -0.5), rgba(0, 0, 0, -0.5)), url(../images/bg/bg_768_2x.jpg);
+    }
+
+    padding-top: 88px;
+    padding-bottom: 89px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, -0.5), rgba(0, 0, 0, -0.5)), url(../images/bg/bg_1024.jpg);
+
+    @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+      background-image: linear-gradient(0deg, rgba(0, 0, 0, -0.5), rgba(0, 0, 0, -0.5)), url(../images/bg/bg_1024_2x.jpg);
+    }
+
+    padding-top: 164px;
+    padding-bottom: 163px;
+  }
+
+  @media screen and (min-width: 2560px) {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, -0.5), rgba(0, 0, 0, -0.5)), url(../images/bg/bg_2560.jpg);
+background-size: 1170px;
+background-color: var(--bg-cl);
+    @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+      background-image: linear-gradient(0deg, rgba(0, 0, 0, -0.5), rgba(0, 0, 0, -0.5)), url(../images/bg/bg_2560_2x.jpg);
+    }
+  }
+}
+
+.hero__title {
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-lineheight);
+  color: var(--light-text-color);
+  font-weight: normal;
+  width: 328px;
+  margin: 0 auto;
+  margin-bottom: 21px;
+
+  @media screen and (min-width: 768px) {
+    width: 380px;
+  }
+
+}
+
+.hero__text {
+  width: 328px;
+  color: var(--light-text-color);
+  margin: 0 auto;
+  margin-bottom: 32px;
+  font-weight: normal;
+
+  @media screen and (min-width: 768px) {
+    width: 380px;
+  }
+}
+
+.hero__btn {
+  margin: 0 auto;
+}

@@ -1,0 +1,21 @@
+.header__container {
+  display: flex;
+  padding: 13px 0;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  @media screen and (min-width: 768px) {
+    justify-content: space-between;
+  }
+
+}
+
+.btns {
+  display: flex;
+  gap: 10px;
+}
+
+
+
+

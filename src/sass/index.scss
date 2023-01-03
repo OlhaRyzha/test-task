@@ -1,2 +1,7 @@
-@import './common';
-@import './example';
+// @import "./base/normalize";
+@import './utills/vars';
+@import './base/base';
+@import './header';
+@import './hero';
+@import './contacts';
+@import './modal-form';
