@@ -10,7 +10,92 @@
   }
 
 }
+.header__img{
+ 
+  -webkit-animation-name: tada;
+  animation-name: tada;
+  -webkit-animation-duration: 3s;
+  animation-duration: 5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  
+  }
+  @-webkit-keyframes tada {
+    0% {
+      transform: translate(-50%) rotate(0);
+    }
+    2%{
+      transform: translate(-50%)  rotate(720deg);
+    }
+    5%{
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  10%, 20% {
+  -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+  transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+  }
+  30%, 50%, 70%, 90% {
+  -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+  40%, 60%, 80% {
+  -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+  100% {
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  }
+  }
+  @keyframes tada {
+  0% {
+    transform: translate(-50%) rotate(0);
+  }
+  2%{
+    transform: translate(-50%)  rotate(720deg);
+  }
+  5%{
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  10%, 20% {
+  -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+  transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+  }
+  30%, 50%, 70%, 90% {
+  -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+  40%, 60%, 80% {
+  -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+  100% {
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  }
+  } 
 
+
+    
+    .hero__wrapper {
+      display: none;
+    
+      @media screen and (min-width: 768px) {
+        display: block;
+        margin-top: 46px;
+        padding-left: calc(216px - 32px);
+        fill: var(--main-txt-cl);
+        padding-bottom: 24px;
+      }
+    
+      @media screen and (min-width: 1200px) {
+        margin-top: 120px;
+        padding-left: calc(257px - 16px);
+      }
+    }
+    
 .btns {
   display: flex;
   gap: 10px;

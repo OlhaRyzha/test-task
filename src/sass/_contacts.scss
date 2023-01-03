@@ -42,7 +42,12 @@
   border-radius: 10px;
   max-width: 328px;
   margin: 0 auto;
-
+  box-shadow: -1px 4px 5px 0px rgba(209,209,209,0.7);
+  &:hover,
+  &:focus{
+    box-shadow: 6px 7px 26px -9px rgba(250,237,142,1);
+    transition: box-shadow 300ms linear;
+  }
   @media screen and (min-width: 768px) {
     width: 50%;
     margin: 0;
@@ -85,16 +90,13 @@
   line-height: var(--body-lineheight);
 
 }
-
-.contacts__email {
+.contacts__job-title,
+.contacts__email,
+.contacts__tel{
   display: flex;
   justify-content: center;
 }
 
-.contacts__tel {
-  display: flex;
-  justify-content: center;
-}
 
 .contacts__btn {
   margin: 54px auto 0;
