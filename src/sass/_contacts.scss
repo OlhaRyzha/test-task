@@ -37,30 +37,31 @@
 }
 
 .contacts__item {
+  position: relative;
   padding: 20px;
   background-color: var(--light-text-color);
   border-radius: 10px;
   max-width: 328px;
   margin: 0 auto;
   box-shadow: -1px 4px 5px 0px rgba(209,209,209,0.7);
+ white-space: nowrap; /* Отменяем перенос текста */
+overflow: hidden; /* Обрезаем содержимое */
+text-overflow: ellipsis;
   &:hover,
   &:focus{
     box-shadow: 6px 7px 26px -9px rgba(250,237,142,1);
     transition: box-shadow 300ms linear;
   }
   @media screen and (min-width: 768px) {
+    min-width: 344px;
     width: 50%;
     margin: 0;
   }
 
   @media screen and (min-width: 1024px) {
+    min-width: 282px;
     width: calc(33% - 30px);
-    scale: 0.97;
 
-    &:first-child {
-      padding-left: 0;
-      padding-right: 0;
-    }
   }
 }
 
@@ -76,6 +77,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 
 .contacts__img {
@@ -83,18 +85,32 @@
 }
 
 .contacts__name {
+  display: block;
   margin-bottom: 20px;
   font-style: normal;
   font-weight: 400;
   font-size: var(--body-font-size);
   line-height: var(--body-lineheight);
-
+  max-width: 242px;
+  white-space: nowrap; /* Отменяем перенос текста */
+  overflow: hidden; /* Обрезаем содержимое */
+  text-overflow: ellipsis;
+}
+.contacts__adress{
+ display: flex;
+ justify-content: center;
+ flex-wrap: wrap;
 }
 .contacts__job-title,
 .contacts__email,
 .contacts__tel{
-  display: flex;
-  justify-content: center;
+  width: 100%;
+  max-width: 242px;
+  display: block;
+  white-space: nowrap; /* Отменяем перенос текста */
+  overflow: hidden; /* Обрезаем содержимое */
+  text-overflow: ellipsis;
+text-align: center;
 }
 
 
@@ -106,3 +122,28 @@
     margin-top: 52px;
   }
 }
+
+ [data-tooltip]::after {
+  content: attr(data-tooltip); /* Выводим текст */
+  position: absolute; /* Абсолютное позиционирование */
+  width: fit-content; /* Ширина подсказки */
+  left: 0; top: 10%; /* Положение подсказки */
+  background: #000; /* цвет фона */
+  color: #fff; /* Цвет текста */
+  padding: 0.5em; /* Поля вокруг текста */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Параметры тени */
+  pointer-events: none; /* Подсказка */
+  opacity: 0; /* Подсказка невидима */
+  transition: 1s ease-in; /* Время появления подсказки */
+  height: fit-content;
+  z-index: 15;
+  border-radius: 4px;
+  white-space:normal;
+  overflow:visible;
+  text-overflow:inherit;
+ } 
+ [data-tooltip]:hover::after {
+  opacity: 1; /* Показываем подсказку */
+  // top: 2em; /* Положение подсказки */
+  top: 60%;
+ }
