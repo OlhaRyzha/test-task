@@ -81,7 +81,7 @@ section{
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: url('../images/cursor.svg'), auto;
+  cursor: url('../images/icon.svg/cursor.svg'), auto;
   font-size: var(--body-font-size);
   line-height: var(--body-lineheight);
   &:disabled{
