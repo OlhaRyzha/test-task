@@ -50,7 +50,9 @@ text-overflow: ellipsis;
   &:hover,
   &:focus{
     box-shadow: 6px 7px 26px -9px rgba(250,237,142,1);
-    transition: box-shadow 300ms linear;
+    scale: 1.05;
+    transition: all 300ms linear;
+
   }
   @media screen and (min-width: 768px) {
     min-width: 344px;
