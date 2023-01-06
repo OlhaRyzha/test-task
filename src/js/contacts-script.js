@@ -1,13 +1,17 @@
 const listEl = document.querySelector('.contacts__list');
 const itemEl = [...listEl.children];
 const btn = document.querySelector('.contacts__btn');
-console.log(btn);
 
-fetch(
-  'https://frontend-test-assignment-api.abz.agency/api/v1/users?page=1&count=32'
-)
-  .then(response => response.json())
-  .then(data => {
+
+fetchUser().then(renderClientsCard).catch(error => alert('Error'));
+
+function fetchUser(){
+ return fetch('https://frontend-test-assignment-api.abz.agency/api/v1/users?page=1&count=32')
+  .then(response => {return response.json()})
+ };
+
+
+ function renderClientsCard(data){
     const users = data.users;
 
     const sortUsers = [...users].sort(
@@ -15,7 +19,7 @@ fetch(
         firstRegistration.registration_timestamp -
         secondRegistration.registration_timestamp
     );
-    console.log(sortUsers);
+
     // const {email, name, phone, photo, position} = sortUsers;
 
     for (let i = 0; i < itemEl.length; i += 1) {
@@ -55,25 +59,10 @@ fetch(
           btn.classList.add('visually-hidden');
           return;
         }
-        console.log(counterValue);
+  
       }
     }
 
-    if (data.success) {
-      `process success response`;
-    } else {
-      `proccess server errors `;
-    }
-  });
+  }
 
-const obj = {
-  email: 'kjkfdnkj@mail.ru',
-  id: 11172,
-  name: 'doidjf',
-  phone: '+380938491222',
-  photo:
-    'https://frontend-test-assignment-api.abz.agency/images/users/63b5dc1b5396c11172.jpg',
-  position: 'Content manager',
-  position_id: 2,
-  registration_timestamp: 1672862747,
-};
+

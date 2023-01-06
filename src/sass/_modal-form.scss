@@ -7,16 +7,30 @@
 form {
   width: 328px;
   margin: 0 auto;
-
+  position: relative;
   @media screen and (min-width: 768px) {
     width: 380px;
 
   }
-
-
 }
 
-input[name="name"] {
+form::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; 
+  height: 100%; 
+  background:rgba(51, 51, 51, 0.9) ur1("../images/logo_img.png") center 50px no-repeat; 
+  // gif
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease 0s;
+  }
+  
+
+input[name="name"],
+input[name="email"], 
+input[name="tel"] {
   width: 100%;
   height: 54px;
   border: 1px solid #D0CFCF;
@@ -27,8 +41,13 @@ input[name="name"] {
   line-height: var(--body-lineheight);
   color: var(--input-text-color);
   background-color: var(--bg-cl);
+  outline-color: rgb(192, 192, 8);
 }
 
+ 
+.error{
+  box-shadow: 0 0 15px red;
+}
 #name-input {
   margin-top: -1px;
 
@@ -155,4 +174,14 @@ legend {
   margin: 0 auto;
   margin-top: 24px;
 
+}
+.file__preview__js{
+  position: absolute;
+  bottom: -35px;
+  left: 384px;
+  opacity: 0.6;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  box-shadow: -8px 7px 5px 0px rgba(195,182,204,1);
 }
