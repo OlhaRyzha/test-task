@@ -13,11 +13,11 @@ function fetchUser(){
 
  function renderClientsCard(data){
     const users = data.users;
-
+// console.log(users)
     const sortUsers = [...users].sort(
       (firstRegistration, secondRegistration) =>
-        firstRegistration.registration_timestamp -
-        secondRegistration.registration_timestamp
+      secondRegistration.registration_timestamp -
+        firstRegistration.registration_timestamp
     );
 
     // const {email, name, phone, photo, position} = sortUsers;

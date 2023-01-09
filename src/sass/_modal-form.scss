@@ -14,19 +14,7 @@ form {
   }
 }
 
-form::after {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; 
-  height: 100%; 
-  background:rgba(51, 51, 51, 0.9) ur1("../images/logo_img.png") center 50px no-repeat; 
-  // gif
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.5s ease 0s;
-  }
-  
+
 
 input[name="name"],
 input[name="email"], 
@@ -153,6 +141,8 @@ legend {
   visibility: hidden;
   position: absolute;
   width: calc(100% - 83px);
+  width: 100%;
+  height: 100%;
 }
 
 .load-input {
@@ -184,4 +174,30 @@ legend {
   height: 150px;
   border-radius: 50%;
   box-shadow: -8px 7px 5px 0px rgba(195,182,204,1);
+}
+.hidden {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; 
+  height: 100%; 
+  background-color:rgba(26, 25, 25, 0.9);
+  background-image: url('../images/loading.gif');
+  background-size: 300px;
+  background-position:  center;
+  background-repeat:  no-repeat; 
+  transition: all 0.5s ease 0s;
+  z-index: 555;
+}
+.success__load__js{
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; 
+  height: 100%; 
+  background-color:rgba(26, 25, 25, 0.9);
+  background-image: url('../images/success-image.svg');
+  background-size: 500px;
+  background-position:  center;
+  background-repeat:  no-repeat; 
+  transition: all 0.5s ease 0s;
+  z-index: 555;
 }
