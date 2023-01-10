@@ -19,7 +19,7 @@ const fillContactFormFields = () => {
 
   for (const prop in userInfoFromLS) {
     if (contactFormEl.elements[prop] === formImage) {
-      contactFormEl.elements[prop].files[0] = userInfoFromLS[prop];
+      return
     } else {
       contactFormEl.elements[prop].value = userInfoFromLS[prop];
     }
