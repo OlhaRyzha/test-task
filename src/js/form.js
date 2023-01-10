@@ -18,11 +18,11 @@ const fillContactFormFields = () => {
   }
 
   for(const prop in userInfoFromLS) {
-    // if (contactFormEl.elements[prop] === formImage) {
-    //   contactFormEl.elements[prop].files[0] = userInfoFromLS[prop];
-    // } else {
+    if (contactFormEl.elements[prop] === formImage) {
+      contactFormEl.elements[prop].files[0] = userInfoFromLS[prop];
+    } else {
       contactFormEl.elements[prop].value = userInfoFromLS[prop];
-    // }
+    }
   }
 };
 
@@ -71,7 +71,7 @@ async function onContactFormSubmit(event){
 
   const { status, error }= await sendData(formData);
 console.log(status)
-  if (status === 200 || 201) {
+  if (status === 201 || 200) {
     onSuccess(event.target)
   }else if(status === 409){
     alert('A user with this data is already registered!')
