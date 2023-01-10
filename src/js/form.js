@@ -17,7 +17,7 @@ const fillContactFormFields = () => {
     return;
   }
 
-  for (const prop in userInfoFromLS) {
+  for(const prop in userInfoFromLS) {
     if (contactFormEl.elements[prop] === formImage) {
       contactFormEl.elements[prop].files[0] = userInfoFromLS[prop];
     } else {
@@ -54,7 +54,7 @@ function onSuccess(formNode) {
   setInterval (() =>location.reload(), 3000)
 }
 
-async  function onContactFormSubmit(event){
+async function onContactFormSubmit(event){
   event.preventDefault();
 
   const elements = contactFormEl.elements;
@@ -69,10 +69,19 @@ async  function onContactFormSubmit(event){
   console.log(Array.from(formData.entries()));
   toggleLoader();
 
-  const response = await sendData(formData);
+  const { status, error }= await sendData(formData);
+console.log(status)
+  if (status === 200 || 201) {
+    onSuccess(event.target)
+  }else if(status === 409){
+    alert('A user with this data is already registered!')
+    location.reload()
+  } else {
+    onError(error)
+  }
 
   toggleLoader();
-  onSuccess(event.target);
+
   successLoadEl.classList.add('success__load__js');
  
 };
