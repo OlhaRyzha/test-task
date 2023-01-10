@@ -17,7 +17,7 @@ const fillContactFormFields = () => {
     return;
   }
 
-  for(const prop in userInfoFromLS) {
+  for (const prop in userInfoFromLS) {
     if (contactFormEl.elements[prop] === formImage) {
       contactFormEl.elements[prop].files[0] = userInfoFromLS[prop];
     } else {
@@ -54,7 +54,7 @@ function onSuccess(formNode) {
   setInterval (() =>location.reload(), 3000)
 }
 
-async function onContactFormSubmit(event){
+async function fuonContactFormSubmit (event){
   event.preventDefault();
 
   const elements = contactFormEl.elements;
