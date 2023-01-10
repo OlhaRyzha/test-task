@@ -54,7 +54,7 @@ function onSuccess(formNode) {
   setInterval (() =>location.reload(), 3000)
 }
 
-async function fuonContactFormSubmit (event){
+async function onContactFormSubmit(event){
   event.preventDefault();
 
   const elements = contactFormEl.elements;
