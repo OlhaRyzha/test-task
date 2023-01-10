@@ -73,11 +73,9 @@ async function onContactFormSubmit(event){
 console.log(status)
   if (status === 201 || 200) {
     onSuccess(event.target)
-  }else if(status === 409){
-    alert('A user with this data is already registered!')
-    location.reload()
   } else {
     onError(error)
+    location.reload()
   }
 
   toggleLoader();
