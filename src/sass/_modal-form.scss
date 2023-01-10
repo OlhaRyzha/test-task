@@ -168,12 +168,16 @@ legend {
 .file__preview__js{
   position: absolute;
   bottom: -35px;
-  left: 384px;
+  left: 180px;
   opacity: 0.6;
   width: 150px;
   height: 150px;
   border-radius: 50%;
   box-shadow: -8px 7px 5px 0px rgba(195,182,204,1);
+  @media screen and (min-width: 768px) {
+    left: 384px;
+
+  }
 }
 .hidden {
   position: fixed;

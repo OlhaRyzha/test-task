@@ -15,15 +15,14 @@ const formBtnEl = document.querySelector('.modal-form-btn');
 
 form.addEventListener("keyup", e =>{
 const target = e.target;
-formBtnEl.removeAttribute('disabled')
 if((target === tel && target.value.length < 13) ||
 (target === email && !target.value.includes('@'))||
-(target === name && target.value.length < 2)
+(target === name && target.value.length < 2)||
+(target === formImage && target.value.length < 1)
 ){target.style.boxShadow = '0 0 15px red';
    formBtnEl.setAttribute('disabled', 'disabled')
-
-}
-  else{target.style.boxShadow = '0 0 15px green'}
+}else{target.style.boxShadow = '0 0 15px green';
+formBtnEl.removeAttribute('disabled')}
 
 })
 
@@ -44,7 +43,7 @@ if((target === tel && target.value.length < 13) ||
       return;
     }
     // проверим размер файла (<5 Мб)
-    if (file.size > 5500 || 
+    if (+file.size > 25000 || 
       file.width > 70 ||
       file.height > 70) {
       alert('Minimum size of photo 70x70px. The photo format must be jpeg/jpg type. The photo size must not be greater than 5 Mb');
@@ -54,7 +53,7 @@ if((target === tel && target.value.length < 13) ||
 
     const reader = new FileReader();
       reader.onload = function (e) {
-      formPreview.innerHTML = `<img src="${e.target.result}" class ="file__preview__js" alt ="photo">`;
+      formPreview.innerHTML = `<img src="${e.target.result}" width ='70' height ='70' class ="file__preview__js" alt ="photo">`;
     };
     reader.onerror = function (e) {
       alert('Ошибка');

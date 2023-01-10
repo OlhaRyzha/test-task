@@ -49,9 +49,9 @@ function onError(error) {
 function onSuccess(formNode) {
   alert('Your request has been sent!');
   formNode.classList.remove('hidden');
-
   formPreview.innerHTML = '';
   formNode.reset();
+  setInterval (() =>location.reload(), 3000)
 }
 
 onContactFormSubmit = async event => {
@@ -73,7 +73,8 @@ onContactFormSubmit = async event => {
 
   toggleLoader();
   onSuccess(event.target);
-  // successLoadEl.classList.add('success__load__js');
+  successLoadEl.classList.add('success__load__js');
+ 
 };
 
 async function sendData(data) {
@@ -102,9 +103,9 @@ function toggleLoader() {
   loader.classList.toggle('hidden');
 }
 
-function removeEl(el){
- return el.remove()
-}
+
 contactFormEl.addEventListener('change', onContactFormFieldChange);
 contactFormEl.addEventListener('submit', onContactFormSubmit);
+successLoadEl.addEventListener('click', () => {successLoadEl.classList.remove('success__load__js')})
+
 
