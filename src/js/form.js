@@ -89,7 +89,7 @@ async function onContactFormSubmit(event){
 }
 
   toggleLoader();
-  onSuccess(event.target);
+
   successLoadEl.classList.add('success__load__js');
  
 };
