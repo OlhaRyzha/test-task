@@ -21,6 +21,7 @@ if((target === tel && target.value.length < 13) ||
 (target === formImage && target.value.length < 1)
 ){target.style.boxShadow = '0 0 15px red';
    formBtnEl.setAttribute('disabled', 'disabled')
+   
 }else{target.style.boxShadow = '0 0 15px green';
 formBtnEl.removeAttribute('disabled')}
 

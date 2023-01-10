@@ -18,11 +18,11 @@ const fillContactFormFields = () => {
   }
 
   for(const prop in userInfoFromLS) {
-    if (contactFormEl.elements[prop] === formImage) {
-      contactFormEl.elements[prop].files[0] = userInfoFromLS[prop];
-    } else {
+    // if (contactFormEl.elements[prop] === formImage) {
+    //   contactFormEl.elements[prop].files[0] = userInfoFromLS[prop];
+    // } else {
       contactFormEl.elements[prop].value = userInfoFromLS[prop];
-    }
+    // }
   }
 };
 
