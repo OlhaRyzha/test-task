@@ -43,7 +43,7 @@ formBtnEl.removeAttribute('disabled')}
       return;
     }
     // проверим размер файла (<5 Мб)
-    if (+file.size > 25000 || 
+    if (+file.size > 5242880|| 
       file.width > 70 ||
       file.height > 70) {
       alert('Minimum size of photo 70x70px. The photo format must be jpeg/jpg type. The photo size must not be greater than 5 Mb');
