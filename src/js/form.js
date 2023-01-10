@@ -54,7 +54,7 @@ function onSuccess(formNode) {
   setInterval (() =>location.reload(), 3000)
 }
 
-async function onContactFormSubmit(event){
+ onContactFormSubmit = async (event) =>{
   event.preventDefault();
 
   const elements = contactFormEl.elements;
@@ -96,7 +96,9 @@ async function onContactFormSubmit(event){
 
 async function sendData(data) {
   const { token } = await fetchToken();
+
   console.log(token);
+  
   return await fetch(
     'https://frontend-test-assignment-api.abz.agency/api/v1/users',
     {
