@@ -69,7 +69,24 @@ async function onContactFormSubmit(event){
   console.log(Array.from(formData.entries()));
   toggleLoader();
 
-  const response = await sendData(formData);
+  const {status, error} = await sendData(formData);
+  
+  switch(status){ 
+  case 200: 
+    onSuccess(event.target); 
+    break; 
+  case 201: 
+    onSuccess(event.target); 
+    break; 
+ 
+  case 409: 
+    alert('A user with this data is already registered!'); 
+    location.reload(); 
+    break; 
+    default: 
+      onError(error) 
+    location.reload() 
+}
 
   toggleLoader();
   onSuccess(event.target);
