@@ -69,14 +69,27 @@ async function onContactFormSubmit(event){
   console.log(Array.from(formData.entries()));
   toggleLoader();
 
-  const { status, error }= await sendData(formData);
+  const { status, error } = await sendData(formData);
+
 console.log(status)
-  if (status === 201 || 200) {
-    onSuccess(event.target)
-  } else {
-    onError(error)
+
+switch(status){
+  case 200:
+    onSuccess(event.target);
+    break;
+  case 201:
+    onSuccess(event.target);
+    break;
+
+  case 409:
+    alert('A user with this data is already registered!');
+    location.reload();
+    break;
+    default:
+      onError(error)
     location.reload()
-  }
+}
+ 
 
   toggleLoader();
 
@@ -86,7 +99,7 @@ console.log(status)
 
 async function sendData(data) {
   const { token } = await fetchToken();
-  console.log(token);
+
   return await fetch(
     'https://frontend-test-assignment-api.abz.agency/api/v1/users',
     {
